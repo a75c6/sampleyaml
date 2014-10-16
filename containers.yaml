@@ -1,0 +1,9 @@
+version: v1beta2
+containers:
+  - name: simple-echo
+    image: busybox
+    command: ['nc', '-p', '8080', '-l', '-l', '-e', 'echo', 'hello world!']
+    ports:
+      - name: nc-echo
+        hostPort: 8080
+        containerPort: 8080
